@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/bootstrap.css">
+   <style>
+      #scene {
+         width: 120vw;
+         height: 120vh;
+         position: fixed;
+         left: -10%;
+         top: -10%;
+         right: -10%;
+         bottom: -10%;
+         z-index: -1;
+      }
+
+      * {
+         transition: 1s;
+         box-sizing: border-box;
+      }
+
+      html,
+      body {
+         width: 100%;
+         height: 100%;
+         color: white;
+      }
+
+      body {
+         background-image: url(./coco.jpg);
+         /* 重點 */
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+
+
+      }
+
+      .row {
+         margin: 1rem;
+         border-radius: 50px;
+         border: 1px solid white;
+         box-shadow: 0.1rem 0.1rem 50px black;
+      }
+
+      .box {
+         width: 300px;
+
+         color: rgb(0, 177, 145);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 15px;
+         padding: 1rem;
+         height: 100%;
+      }
+
+
+
+      .box:hover {
+         opacity: 0.5;
+         color: #fff;
+         font-size: 1.2rem
+      }
+   </style>
+</head>
+
+<body class="d-lg-flex ">
+   <!-- <embed src="coco.mp3" autostart="0" height="300" width="450"></embed> -->
+   <!-- <embed src=" coco.mp3" autostart="true" hidden="true" height="300" width="30" loop="1"></embed> -->
+   <div class="d-lg-flex justify-content-start align-items-center">
+      <class class="justify-content-start align-items-center"
+         style="font-size:30px;margin-left: 25px;font-weight: 500;">好鱷冷知識</class>
+
+      <div class="row h-75 flex-lg-shrink-0 m-3">
+
+         <div class="col-12 box col-lg-auto" data-depth="0.1" style="backdrop-filter:none;">
+
+            <div class="biow">1. 近親居然是鳥。</div>
+
+         </div>
+         <div class="col-12 box col-lg-auto" data-depth="-0.1" style="backdrop-filter: grayscale(1);">
+            2. 在淺水區用走的。
+         </div>
+         <div class="col-12 box col-lg-auto" data-depth="0.5" style="backdrop-filter:btightness(1.5)">
+            3.「鱷魚的眼淚」是用來保護眼睛。
+         </div>
+         <div class="col-12 box col-lg-auto" data-depth="-0.5" style="backdrop-filter:blur(5px)">4.
+            雖滿口尖牙，咬力很強，但張力一般，一根橡皮筋就可使它閉嘴。</div>
+         <div class="col-12 box col-lg-auto" data-depth="0.7" style="backdrop-filter:contrast(0.8)">
+            5. 沒有嘴唇。
+         </div>
+         <div class="col-12 box col-lg-auto" style="backdrop-filter:invert(0.7)">6. 澎湖鱷是台灣出土最完整的脊椎動物化石。</div>
+         <div class="col-12 box col-lg-auto" style="backdrop-filter:opacity(0.4)">7. 免疫與自愈功能強大，壽命能達到70-100歲。</div>
+         <div class="col-12 box col-lg-auto" style="backdrop-filter:sepia(0.4)">8.血液可以幫助治療癌症。</div>
+         <div class="col-12 box col-lg-auto" style="backdrop-filter: saturate(0.8);">9.性別是溫度來決定的
+         </div>
+         <div class="col-12 box col-lg-auto" style="backdrop-filter:hue-rotate(120deg);">
+            10.擁有絕佳的視力與聽力。</div>
+      </div>
+   </div>
+   <script src="./js/parallax.js"></script>
+   <script>
+      var scene = document.getElementById('scene');
+      var parallaxInstance = new Parallax(scene, {
+         relativeInput: true,
+         // 位移量
+         scalarX: 20.0,
+         scalarY: 20.0,
+         // 摩擦力,0.01 ~ 1
+         frictionX: 0.01,
+         frictionY: 0.01,
+         // 限制移動量
+         limitX: 300,
+         limitY: 300
+      });
+   </script>
+   <iframe src="coco.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+   </iframe>
+   <!-- <audio controls>
+      <source src="coco.mp3" autostart="true" hidden="true" />
+   </audio> -->
+</body>
+
+</html>
